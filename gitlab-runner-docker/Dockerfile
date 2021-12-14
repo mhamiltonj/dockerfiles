@@ -36,4 +36,4 @@ RUN apt-get update && apt-get install --no-install-recommends -y docker-ce docke
     && rm -rf /var/lib/apt/lists/*
 
 # Modify the gitlab runner's entrypoint to start the docker engine
-RUN sed -i 's/#!\/bin\/bash/#!\/bin\/bash\nrm \/var\/run\/docker.pid\ndockerd > \/var\/log\/dockerd.log 2>\&1 \&\nsleep 3/' entrypoint
+RUN sed -i 's/#!\/bin\/bash/#!\/bin\/bash\ndockerd > \/var\/log\/dockerd.log 2>\&1 \&\nsleep 3/' entrypoint
